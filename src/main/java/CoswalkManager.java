@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CoswalkManager {
-    // ArrayList untuk menyimpan daftar peserta
     private static ArrayList<Cosplayer> daftarPeserta = new ArrayList<>();
     private static Scanner scanner = new Scanner(System.in);
 
@@ -38,7 +37,6 @@ public class CoswalkManager {
         }
     }
 
-    // Tampilan Menu Utama
     private static void showMenu() {
         System.out.println("======================================");
         System.out.println("    MANAJEMEN DAFTAR PESERTA COSWALK  ");
@@ -51,7 +49,6 @@ public class CoswalkManager {
         System.out.println("======================================");
     }
 
-    // 1. Fitur Tambah Peserta
     private static void tambahPeserta() {
         System.out.println("\n--- Tambah Peserta Baru ---");
         System.out.print("Nama Cosplayer : ");
@@ -68,7 +65,6 @@ public class CoswalkManager {
         System.out.println(">> Berhasil menambahkan peserta!");
     }
 
-    // 2. Fitur Lihat Daftar (Format Tabel)
     private static void lihatDaftar() {
         System.out.println("\n--- Daftar Peserta Coswalk ---");
         if (daftarPeserta.isEmpty()) {
@@ -76,11 +72,9 @@ public class CoswalkManager {
             return;
         }
 
-        // Header Tabel
         System.out.printf("| %-3s | %-20s | %-20s | %-20s |\n", "No", "Nama Cosplayer", "Karakter", "Series");
         System.out.println("---------------------------------------------------------------------------");
 
-        // Isi Tabel
         for (int i = 0; i < daftarPeserta.size(); i++) {
             Cosplayer p = daftarPeserta.get(i);
             System.out.printf("| %-3d | %-20s | %-20s | %-20s |\n",
@@ -92,9 +86,8 @@ public class CoswalkManager {
         System.out.println("---------------------------------------------------------------------------");
     }
 
-    // 3. Fitur Edit Peserta
     private static void updatePeserta() {
-        lihatDaftar(); // Tampilkan dulu agar user tahu nomor urutnya
+        lihatDaftar();
         if (daftarPeserta.isEmpty()) return;
 
         System.out.print("\nMasukkan Nomor Peserta yang ingin diedit: ");
@@ -125,7 +118,6 @@ public class CoswalkManager {
         }
     }
 
-    // 4. Fitur Hapus Peserta
     private static void hapusPeserta() {
         lihatDaftar();
         if (daftarPeserta.isEmpty()) return;

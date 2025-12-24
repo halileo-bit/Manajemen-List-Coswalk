@@ -17,12 +17,10 @@ public class Cosplayer {
     public void setNamaKarakter(String namaKarakter) { this.namaKarakter = namaKarakter; }
     public void setAsalSeries(String asalSeries) { this.asalSeries = asalSeries; }
 
-    // Format untuk disimpan ke file
     public String toFileFormat() {
         return namaCosplayer + ";" + namaKarakter + ";" + asalSeries;
     }
 
-    // Static method untuk membuat objek dari string file
     public static Cosplayer fromFileFormat(String line) {
         String[] parts = line.split(";");
         if (parts.length == 3) {

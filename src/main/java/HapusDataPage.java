@@ -17,31 +17,23 @@ public class HapusDataPage extends JFrame {
     }
 
     private void initComponents() {
-        // Main panel
         JPanel mainPanel = new JPanel(new BorderLayout());
         mainPanel.setBackground(new Color(248, 249, 250));
 
-        // Header
         JPanel headerPanel = new JPanel(new BorderLayout());
         headerPanel.setBackground(new Color(220, 53, 69));
         headerPanel.setBorder(BorderFactory.createEmptyBorder(15, 25, 15, 25));
 
-        // Left side - Title
         JPanel titlePanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         titlePanel.setOpaque(false);
-
-        JLabel lblIcon = new JLabel("🗑️");
-        lblIcon.setFont(new Font("Segoe UI", Font.PLAIN, 28));
 
         JLabel lblTitle = new JLabel("HAPUS DATA PESERTA");
         lblTitle.setFont(new Font("Segoe UI", Font.BOLD, 22));
         lblTitle.setForeground(Color.WHITE);
 
-        titlePanel.add(lblIcon);
         titlePanel.add(lblTitle);
         headerPanel.add(titlePanel, BorderLayout.WEST);
 
-        // Right side - Selected info
         lblSelectedInfo = new JLabel("Pilih data dari tabel di bawah");
         lblSelectedInfo.setFont(new Font("Segoe UI", Font.PLAIN, 12));
         lblSelectedInfo.setForeground(Color.WHITE);
@@ -50,12 +42,10 @@ public class HapusDataPage extends JFrame {
 
         mainPanel.add(headerPanel, BorderLayout.NORTH);
 
-        // Content panel
         JPanel contentPanel = new JPanel(new BorderLayout());
         contentPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
         contentPanel.setBackground(Color.WHITE);
 
-        // Warning panel
         JPanel warningPanel = new JPanel(new BorderLayout());
         warningPanel.setBackground(new Color(255, 243, 205));
         warningPanel.setBorder(BorderFactory.createCompoundBorder(
@@ -63,14 +53,8 @@ public class HapusDataPage extends JFrame {
                 BorderFactory.createEmptyBorder(10, 15, 10, 15)
         ));
 
-        JLabel lblWarning = new JLabel("<html><b>⚠️ PERINGATAN:</b> Hapus data hanya jika diperlukan. "
-                + "Data yang dihapus tidak dapat dikembalikan.</html>");
-        lblWarning.setFont(new Font("Segoe UI", Font.PLAIN, 12));
-        warningPanel.add(lblWarning, BorderLayout.CENTER);
-
         contentPanel.add(warningPanel, BorderLayout.NORTH);
 
-        // Tabel data peserta
         String[] columns = {"No", "Nama Cosplayer", "Nama Karakter", "Asal Series"};
         tableModel = new DefaultTableModel(columns, 0) {
             @Override
@@ -87,7 +71,6 @@ public class HapusDataPage extends JFrame {
         tablePeserta.getTableHeader().setForeground(Color.WHITE);
         tablePeserta.setSelectionBackground(new Color(255, 220, 220));
 
-        // Listener untuk seleksi tabel
         tablePeserta.getSelectionModel().addListSelectionListener(e -> {
             if (!e.getValueIsAdjusting()) {
                 int selectedRow = tablePeserta.getSelectedRow();
@@ -111,32 +94,27 @@ public class HapusDataPage extends JFrame {
 
         mainPanel.add(contentPanel, BorderLayout.CENTER);
 
-        // Button panel
         JPanel buttonPanel = new JPanel(new GridLayout(1, 4, 10, 0));
         buttonPanel.setBorder(BorderFactory.createEmptyBorder(15, 20, 15, 20));
         buttonPanel.setBackground(Color.WHITE);
 
-        // Button Hapus
-        JButton btnHapus = new JButton("🚮 HAPUS DATA TERPILIH");
+        JButton btnHapus = new JButton("HAPUS DATA TERPILIH");
         btnHapus.setBackground(new Color(220, 53, 69));
         btnHapus.setForeground(Color.WHITE);
         btnHapus.setFont(new Font("Segoe UI", Font.BOLD, 13));
         btnHapus.addActionListener(e -> hapusData());
 
-        // Button Hapus Semua
-        JButton btnHapusSemua = new JButton("🗑️ Hapus Semua");
+        JButton btnHapusSemua = new JButton("Hapus Semua");
         btnHapusSemua.setBackground(new Color(108, 117, 125));
         btnHapusSemua.setForeground(Color.WHITE);
         btnHapusSemua.addActionListener(e -> hapusSemua());
 
-        // Button Refresh
-        JButton btnRefresh = new JButton("🔄 Refresh Tabel");
+        JButton btnRefresh = new JButton("Refresh Tabel");
         btnRefresh.setBackground(new Color(40, 167, 69));
         btnRefresh.setForeground(Color.WHITE);
         btnRefresh.addActionListener(e -> refreshTable());
 
-        // Button Kembali
-        JButton btnKembali = new JButton("↩️ Kembali");
+        JButton btnKembali = new JButton("↩Kembali");
         btnKembali.setBackground(new Color(0, 123, 255));
         btnKembali.setForeground(Color.WHITE);
         btnKembali.addActionListener(e -> kembali());
@@ -184,9 +162,7 @@ public class HapusDataPage extends JFrame {
                 "<html><b>Konfirmasi Hapus Data:</b><br><br>" +
                         "Nama: " + namaPeserta + "<br>" +
                         "Karakter: " + karakter + "<br>" +
-                        "Series: " + series + "<br><br>" +
-                        "Apakah Anda yakin ingin menghapus data ini?<br>" +
-                        "<font color='red'><b>Data tidak dapat dikembalikan!</b></font></html>",
+                        "Series: " + series + "<br><br>",
                 "Konfirmasi Hapus",
                 JOptionPane.YES_NO_OPTION,
                 JOptionPane.WARNING_MESSAGE);
@@ -194,8 +170,7 @@ public class HapusDataPage extends JFrame {
         if (confirm == JOptionPane.YES_OPTION) {
             DatabaseManager.removeCosplayer(selectedRow);
             JOptionPane.showMessageDialog(this,
-                    "Data berhasil dihapus dari database!\n" +
-                            "Data telah disimpan ke database.txt",
+                    "Data berhasil dihapus dari database!\n",
                     "Sukses", JOptionPane.INFORMATION_MESSAGE);
             refreshTable();
         }
@@ -210,22 +185,16 @@ public class HapusDataPage extends JFrame {
         }
 
         int confirm = JOptionPane.showConfirmDialog(this,
-                "<html><b>⚠️ PERINGATAN TINGGI:</b><br><br>" +
-                        "Anda akan menghapus <b>SEMUA DATA</b> (" + DatabaseManager.getTotalPeserta() + " peserta)<br>" +
-                        "Data akan dihapus dari database.txt<br><br>" +
-                        "<font color='red'><b>Operasi ini tidak dapat dibatalkan!</b></font><br><br>" +
-                        "Apakah Anda yakin ingin melanjutkan?</html>",
+                "Semua data akan dihapus dari database.txt" ,
                 "Konfirmasi Hapus Semua",
                 JOptionPane.YES_NO_OPTION,
                 JOptionPane.ERROR_MESSAGE);
 
         if (confirm == JOptionPane.YES_OPTION) {
-            // Hapus semua data dengan membuat list baru kosong
             DatabaseManager.getDaftarPeserta().clear();
             DatabaseManager.saveData();
             JOptionPane.showMessageDialog(this,
-                    "Semua data berhasil dihapus!\n" +
-                            "Database.txt telah dikosongkan.",
+                    "Semua data berhasil dihapus!\n",
                     "Sukses", JOptionPane.INFORMATION_MESSAGE);
             refreshTable();
         }

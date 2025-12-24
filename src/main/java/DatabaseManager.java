@@ -25,7 +25,6 @@ public class DatabaseManager {
         }
     }
 
-    // Simpan data ke file teks
     public static void saveData() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_NAME))) {
             for (Cosplayer cosplayer : daftarPeserta) {
@@ -39,7 +38,6 @@ public class DatabaseManager {
         }
     }
 
-    // Load data dari file teks
     public static void loadData() {
         File file = new File(FILE_NAME);
         if (file.exists()) {
@@ -91,7 +89,6 @@ public class DatabaseManager {
         return "database.txt (tidak ditemukan)";
     }
 
-    // Backup database (opsional)
     public static void backupDatabase() {
         File original = new File(FILE_NAME);
         File backup = new File("database_backup.txt");

@@ -16,31 +16,23 @@ public class PesertaPage extends JFrame {
     }
 
     private void initComponents() {
-        // Main panel
         JPanel mainPanel = new JPanel(new BorderLayout());
         mainPanel.setBackground(new Color(248, 249, 250));
 
-        // Header
         JPanel headerPanel = new JPanel(new BorderLayout());
         headerPanel.setBackground(new Color(40, 167, 69));
         headerPanel.setBorder(BorderFactory.createEmptyBorder(15, 25, 15, 25));
 
-        // Left side - Title
         JPanel titlePanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         titlePanel.setOpaque(false);
-
-        JLabel lblIcon = new JLabel("👤");
-        lblIcon.setFont(new Font("Segoe UI", Font.PLAIN, 28));
 
         JLabel lblTitle = new JLabel("PANEL PESERTA");
         lblTitle.setFont(new Font("Segoe UI", Font.BOLD, 24));
         lblTitle.setForeground(Color.WHITE);
 
-        titlePanel.add(lblIcon);
         titlePanel.add(lblTitle);
         headerPanel.add(titlePanel, BorderLayout.WEST);
 
-        // Right side - Info
         JPanel infoPanel = new JPanel(new GridLayout(2, 1, 0, 5));
         infoPanel.setOpaque(false);
 
@@ -49,29 +41,20 @@ public class PesertaPage extends JFrame {
         lblTotal.setForeground(Color.WHITE);
         lblTotal.setHorizontalAlignment(SwingConstants.RIGHT);
 
-        JLabel lblInfo = new JLabel("Anda dapat melihat dan menambah data");
-        lblInfo.setFont(new Font("Segoe UI", Font.PLAIN, 11));
-        lblInfo.setForeground(Color.WHITE);
-        lblInfo.setHorizontalAlignment(SwingConstants.RIGHT);
-
         infoPanel.add(lblTotal);
-        infoPanel.add(lblInfo);
         headerPanel.add(infoPanel, BorderLayout.EAST);
 
         mainPanel.add(headerPanel, BorderLayout.NORTH);
 
-        // Content panel
         JPanel contentPanel = new JPanel(new BorderLayout());
         contentPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
         contentPanel.setBackground(Color.WHITE);
 
-        // Label judul tabel
-        JLabel lblTableTitle = new JLabel("📋 DAFTAR PESERTA COSWALK");
+        JLabel lblTableTitle = new JLabel("DAFTAR PESERTA COSWALK");
         lblTableTitle.setFont(new Font("Segoe UI", Font.BOLD, 16));
         lblTableTitle.setBorder(BorderFactory.createEmptyBorder(0, 0, 10, 0));
         contentPanel.add(lblTableTitle, BorderLayout.NORTH);
 
-        // Tabel data peserta
         String[] columns = {"No", "Nama Cosplayer", "Nama Karakter", "Asal Series"};
         tableModel = new DefaultTableModel(columns, 0) {
             @Override
@@ -88,7 +71,6 @@ public class PesertaPage extends JFrame {
         tablePeserta.getTableHeader().setForeground(Color.WHITE);
         tablePeserta.setSelectionBackground(new Color(230, 255, 237));
 
-        // Enable sorting
         tablePeserta.setAutoCreateRowSorter(true);
 
         JScrollPane scrollPane = new JScrollPane(tablePeserta);
@@ -97,35 +79,29 @@ public class PesertaPage extends JFrame {
 
         mainPanel.add(contentPanel, BorderLayout.CENTER);
 
-        // Button panel
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 20));
         buttonPanel.setBackground(Color.WHITE);
 
-        // Button Tambah Data
-        JButton btnTambah = new JButton("➕ Tambah Data Peserta");
+        JButton btnTambah = new JButton("Tambah Data Peserta");
         btnTambah.setBackground(new Color(0, 123, 255));
         btnTambah.setForeground(Color.WHITE);
         btnTambah.setFont(new Font("Segoe UI", Font.BOLD, 14));
         btnTambah.setPreferredSize(new Dimension(200, 45));
-        btnTambah.setToolTipText("Buka halaman untuk menambah data peserta baru");
         btnTambah.addActionListener(e -> openTambahPage());
 
-        // Button Refresh
-        JButton btnRefresh = new JButton("🔄 Refresh Data");
+        JButton btnRefresh = new JButton("Refresh Data");
         btnRefresh.setBackground(new Color(108, 117, 125));
         btnRefresh.setForeground(Color.WHITE);
         btnRefresh.setPreferredSize(new Dimension(150, 45));
         btnRefresh.addActionListener(e -> refreshTable());
 
-        // Button Cari Data
-        JButton btnSearch = new JButton("🔍 Cari Data");
+        JButton btnSearch = new JButton("Cari Data");
         btnSearch.setBackground(new Color(255, 193, 7));
         btnSearch.setForeground(Color.BLACK);
         btnSearch.setPreferredSize(new Dimension(150, 45));
         btnSearch.addActionListener(e -> searchData());
 
-        // Button Logout
-        JButton btnLogout = new JButton("🚪 Logout");
+        JButton btnLogout = new JButton("Logout");
         btnLogout.setBackground(new Color(220, 53, 69));
         btnLogout.setForeground(Color.WHITE);
         btnLogout.setPreferredSize(new Dimension(150, 45));
