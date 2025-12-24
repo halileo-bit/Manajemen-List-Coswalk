@@ -1,28 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-class Cosplayer {
-    private String namaCosplayer;
-    private String namaKarakter;
-    private String asalSeries;
-
-    public Cosplayer(String namaCosplayer, String namaKarakter, String asalSeries) {
-        this.namaCosplayer = namaCosplayer;
-        this.namaKarakter = namaKarakter;
-        this.asalSeries = asalSeries;
-    }
-
-    // Getters
-    public String getNamaCosplayer() { return namaCosplayer; }
-    public String getNamaKarakter() { return namaKarakter; }
-    public String getAsalSeries() { return asalSeries; }
-
-    // Setters
-    public void setNamaCosplayer(String namaCosplayer) { this.namaCosplayer = namaCosplayer; }
-    public void setNamaKarakter(String namaKarakter) { this.namaKarakter = namaKarakter; }
-    public void setAsalSeries(String asalSeries) { this.asalSeries = asalSeries; }
-}
-
 public class CoswalkManager {
     // ArrayList untuk menyimpan daftar peserta
     private static ArrayList<Cosplayer> daftarPeserta = new ArrayList<>();
