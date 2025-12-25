@@ -2,7 +2,7 @@
 <table>
 <tr>
 <td>
-  Aplikasi ini diperuntukkan buat memudahkan para pendaftar lomba Coswalk (Cosplay Walking) untuk mendaftar secara OTS tanpa perlu tulis tangan, adapun fitur admin diperuntukkan buat bikin list pendaftar yang daftarnya lewat online sekaligus update data para pendaftar yang mendaftar di online namun kostum yang mereka pakai sangat berbeda.
+  This application is intended to make it easier for Coswalk (Cosplay Walking) competition registrants to register OTS without having to write by hand, while the admin feature is intended to create a list of registrants who register online as well as update data for registrants who register online but the costumes they wear are very different.
 </td>
 </tr>
 </table>
@@ -10,7 +10,7 @@
 ## Program
 
 ### Login Page
-Saat ini masih dalam tahap pengembangan karena 
+It's currently under development because there's no participant data update feature yet. Therefore, the admin feature includes deleting participant data. However, a data update feature may be added in the near future to make it easier for admins to verify data when they attend cosplay events.   
 
 ![alt text](<images/Screenshot 2025-12-25 104918.png>)
 
@@ -26,7 +26,7 @@ Saat ini masih dalam tahap pengembangan karena
 ### Delete Participant Page
 ![alt text](<images/Screenshot 2025-12-25 124029.png>)
 
-## [Usage](https://iharsh234.github.io/WebApp/)
+## Usage
 
 ### Development
 Want to contribute? Great!
@@ -50,12 +50,7 @@ If you'd like to request a new function, feel free to do so by opening an issue 
 
 ## Built with
 
-- [Java - Swing/AWT](http://www.w3schools.com/jquery/jquery_ref_ajax.asp) - jQuery simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development.
-
-## To-do
-- Add BSE (India) Symbol to the current App.
-- Decide comparison models of Stocks. (suggestions are most welcome).
-- Another WebApp, capable of comparing at least 10 stocks.
+- [Java - Swing/AWT](https://www.geeksforgeeks.org/java/introduction-to-java-swing/) - a Java Foundation Classes [JFC] library and an extension of the Abstract Window Toolkit [AWT]. Java Swing offers much-improved functionality over AWT, new components, expanded components features, and excellent event handling with drag-and-drop support.
 
 ## Team
 
