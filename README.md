@@ -1,4 +1,4 @@
-# Sistem Manajemen List Coswalk
+# Coswalk List Management System
 <table>
 <tr>
 <td>
@@ -9,18 +9,22 @@
 
 ## Program
 
-### Landing Page
-Currently it is working on all NSE (India) Stocks, BSE (India) Stocks Symbol will be added soon.
+### Login Page
+Saat ini masih dalam tahap pengembangan karena 
 
-![](https://iharsh234.github.io/WebApp/images/demo/web_app_face.JPG)
+![alt text](<images/Screenshot 2025-12-25 104918.png>)
 
-### Query Filled Form
-![](https://iharsh234.github.io/WebApp/images/demo/demo_query.JPG)
+### Participant Page
+![alt text](<images/Screenshot 2025-12-25 105007.png>)
 
-### Charts
-![](https://iharsh234.github.io/WebApp/images/demo/demo_chart1.JPG)
-![](https://iharsh234.github.io/WebApp/images/demo/demo_chart2.JPG)
-![](https://iharsh234.github.io/WebApp/images/demo/demo_chart3.JPG)
+### Add Participant Form
+![alt text](<images/Screenshot 2025-12-25 105053.png>)
+
+### Admin Page
+![alt text](<images/Screenshot 2025-12-25 124016.png>)
+
+### Delete Participant Page
+![alt text](<images/Screenshot 2025-12-25 124029.png>)
 
 ## [Usage](https://iharsh234.github.io/WebApp/)
 
@@ -46,7 +50,7 @@ If you'd like to request a new function, feel free to do so by opening an issue 
 
 ## Built with
 
-- [jQuery - Ajax](http://www.w3schools.com/jquery/jquery_ref_ajax.asp) - jQuery simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development.
+- [Java - Swing/AWT](http://www.w3schools.com/jquery/jquery_ref_ajax.asp) - jQuery simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development.
 
 ## To-do
 - Add BSE (India) Symbol to the current App.
