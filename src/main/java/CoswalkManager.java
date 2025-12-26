@@ -33,7 +33,7 @@ public class CoswalkManager {
                 default:
                     System.out.println("Pilihan tidak valid!");
             }
-            System.out.println(); // Baris baru agar rapi
+            System.out.println();
         }
     }
 

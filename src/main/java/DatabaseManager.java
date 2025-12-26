@@ -67,7 +67,6 @@ public class DatabaseManager {
         } else {
             System.out.println("File database.txt tidak ditemukan. Membuat file baru...");
             daftarPeserta = new ArrayList<>();
-            // Coba buat file kosong
             try {
                 file.createNewFile();
                 System.out.println("File database.txt berhasil dibuat");
